@@ -27,8 +27,7 @@ func _process(delta):
 		if e!=null:
 			current_value+=(e.value)
 	lagged_values.append(current_value)
-	fuel+=lagged_values.pick_random()*delta
-	lagged_values.pop_front()
+	fuel+=lagged_values.pop_front()*delta
 			
 	update_fuel.emit(int(fuel))
 
