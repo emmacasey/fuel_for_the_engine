@@ -5,6 +5,7 @@ var enemies
 var drain:float = 0
 var fuel:float = 100
 var lagged_values:Array =[]
+var ratio: int = 100
 
 signal update_fuel 
 
@@ -29,8 +30,8 @@ func _process(delta):
 	lagged_values.append(current_value)
 	fuel+=lagged_values.pop_front()*delta
 			
-	update_fuel.emit(int(fuel))
+	update_fuel.emit(int(fuel/100))
 
 func fuel_engine(amount):
-	fuel+=amount
+	fuel+=amount*100
 
