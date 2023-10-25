@@ -171,16 +171,15 @@ func handle_gravity(delta):
 
 func action_jump():
 	if jump_single or jump_double:
-		if try_drain(1):
-			Audio.play("sounds/jump_a.ogg, sounds/jump_b.ogg, sounds/jump_c.ogg")
-			gravity = -jump_strength
-		
-		if jump_double:
-				jump_double = false
-			
-		if jump_single:
+		if jump_double and health>50 and try_drain(5):
+			jump_double = false
+		elif jump_single and try_drain(1):
 			jump_single = false;
 			jump_double = true;
+		else: return
+
+		Audio.play("sounds/jump_a.ogg, sounds/jump_b.ogg, sounds/jump_c.ogg")
+		gravity = -jump_strength
 
 # Shooting
 
@@ -295,6 +294,20 @@ func damage(amount):
 func drain(amount):
 	health -= amount
 	health_updated.emit(health) # Update health on HUD
+
+	if health > 50:
+		movement_speed = 5
+		jump_strength = 8
+	elif health >25:
+		movement_speed = 5
+		jump_strength = 4
+	elif health >10:
+		movement_speed = 3
+		jump_strength = 0
+	else:
+		movement_speed = 1
+		jump_strength = 0
+
 		
 func try_drain(amount):
 	if health<amount:
