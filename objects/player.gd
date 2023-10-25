@@ -131,9 +131,8 @@ func handle_controls(_delta):
 	# Movement
 	
 	var input := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
-	print(input)
 	movement_velocity = Vector3(input.x, 0, input.y).normalized() * movement_speed
-	print(movement_velocity)
+
 	# Rotation
 	
 	var rotation_input := Input.get_vector("camera_right", "camera_left", "camera_down", "camera_up")
@@ -188,28 +187,28 @@ func action_jump():
 func action_shoot():
 	
 		if !blaster_cooldown.is_stopped(): return # Cooldown for shooting
-		
-		Audio.play(weapon.sound_shoot)
-		
-		container.position.z += 0.25 # Knockback of weapon visual
-		camera.rotation.x += 0.025 # Knockback of camera
-		movement_velocity += Vector3(0, 0, weapon.knockback) # Knockback
-		
-		# Set muzzle flash position, play animation
-		
-		muzzle.play("default")
-		
-		muzzle.rotation_degrees.z = randf_range(-45, 45)
-		muzzle.scale = Vector3.ONE * randf_range(0.40, 0.75)
-		muzzle.position = container.position - weapon.muzzle_position
-		
-		blaster_cooldown.start(weapon.cooldown)
-		
-		# Shoot the weapon, amount based on shot count
-		
-		for n in weapon.shot_count:
-			if try_drain(1):
 
+		if try_drain(weapon.shot_count):
+
+			Audio.play(weapon.sound_shoot)
+			
+			container.position.z += 0.25 # Knockback of weapon visual
+			camera.rotation.x += 0.025 # Knockback of camera
+			movement_velocity += Vector3(0, 0, weapon.knockback) # Knockback
+			
+			# Set muzzle flash position, play animation
+			
+			muzzle.play("default")
+			
+			muzzle.rotation_degrees.z = randf_range(-45, 45)
+			muzzle.scale = Vector3.ONE * randf_range(0.40, 0.75)
+			muzzle.position = container.position - weapon.muzzle_position
+			
+			blaster_cooldown.start(weapon.cooldown)
+			
+			# Shoot the weapon, amount based on shot count
+			
+			for n in weapon.shot_count:
 				raycast.target_position.x = randf_range(-weapon.spread, weapon.spread)
 				raycast.target_position.y = randf_range(-weapon.spread, weapon.spread)
 				
@@ -235,8 +234,8 @@ func action_shoot():
 				
 				impact_instance.position = raycast.get_collision_point() + (raycast.get_collision_normal() / 10)
 				impact_instance.look_at(camera.global_transform.origin, Vector3.UP, true) 
-			else:
-				pass #misfire sound
+		else:
+			pass #misfire sound
 
 # Toggle between available weapons (listed in 'weapons')
 

@@ -5,12 +5,16 @@
 
 [sub_resource type="Theme" id="Theme_mx1vk"]
 
-[node name="title" type="Node2D"]
-position = Vector2(1, 2)
+[node name="title" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_o1mv4")
 
 [node name="Button" type="Button" parent="."]
 z_index = 1
+layout_mode = 0
 offset_left = 40.0
 offset_top = 133.0
 offset_right = 86.0
