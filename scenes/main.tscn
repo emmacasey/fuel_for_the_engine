@@ -25,17 +25,12 @@ outline_color = Color(0, 0, 0, 0.470588)
 environment = ExtResource("1_q8fpv")
 script = ExtResource("2_weogu")
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 100, 0)
+
 [node name="Player" parent="." node_paths=PackedStringArray("crosshair") instance=ExtResource("2_elriq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10259, 2.61063, -0.0435903)
 crosshair = NodePath("../HUD/Crosshair")
-
-[node name="Sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.0139623, 0.999903, 0, -0.999903, 0.0139623, 0, 10, 0)
-light_energy = 10.0
-light_angular_distance = 29.15
-shadow_enabled = true
-shadow_opacity = 0.75
-sky_mode = 1
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("3_s8mkj")

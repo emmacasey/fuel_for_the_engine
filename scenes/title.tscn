@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8go4b1tubjy3"]
+
+[ext_resource type="Script" path="res://scenes/title.gd" id="1_o1mv4"]
+[ext_resource type="Texture2D" uid="uid://biff4dkpfqi47" path="res://splash-screen.png" id="2_550ak"]
+
+[sub_resource type="Theme" id="Theme_mx1vk"]
+
+[node name="title" type="Node2D"]
+position = Vector2(1, 2)
+script = ExtResource("1_o1mv4")
+
+[node name="Button" type="Button" parent="."]
+z_index = 1
+offset_left = 40.0
+offset_top = 133.0
+offset_right = 86.0
+offset_bottom = 164.0
+scale = Vector2(4, 4)
+theme = SubResource("Theme_mx1vk")
+text = "Start"
+
+[node name="Splash-screen" type="Sprite2D" parent="."]
+position = Vector2(639, 358)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_550ak")
+
+[connection signal="pressed" from="Button" to="." method="_on_start_button_pressed"]

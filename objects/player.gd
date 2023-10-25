@@ -102,7 +102,7 @@ func _physics_process(delta):
 	# Falling/respawning
 	
 	if position.y < -10:
-		get_tree().reload_current_scene()
+		die()
 
 # Mouse movement
 
@@ -131,9 +131,9 @@ func handle_controls(_delta):
 	# Movement
 	
 	var input := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
-	
+	print(input)
 	movement_velocity = Vector3(input.x, 0, input.y).normalized() * movement_speed
-	
+	print(movement_velocity)
 	# Rotation
 	
 	var rotation_input := Input.get_vector("camera_right", "camera_left", "camera_down", "camera_up")
@@ -291,7 +291,7 @@ func damage(amount):
 	#sfx
 	drain(amount)
 	if health < 0:
-		get_tree().reload_current_scene() # Reset when out of health
+		die() # Reset when out of health
 	
 func drain(amount):
 	health -= amount
@@ -312,3 +312,7 @@ func action_fuel_engine():
 	var amount = int(health/10)
 	drain(amount)
 	fuel_engine.emit(amount)
+	
+func die():
+	get_tree().change_scene_to_file("res://scenes/title.tscn")
+	
