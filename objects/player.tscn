@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dl2ed4gkybggf"]
+[gd_scene load_steps=9 format=3 uid="uid://dl2ed4gkybggf"]
 
 [ext_resource type="Script" path="res://objects/player.gd" id="1_ffboj"]
 [ext_resource type="Resource" uid="uid://cu2gtxlcmbb34" path="res://weapons/blaster-repeater.tres" id="2_6epbw"]
@@ -10,6 +10,9 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gdq8c"]
 radius = 0.3
 height = 1.0
+
+[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_mg7ui"]
+loop = true
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -75,3 +78,8 @@ autoplay = true
 
 [node name="Cooldown" type="Timer" parent="."]
 one_shot = true
+
+[node name="AlarmSound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamMP3_mg7ui")
+pitch_scale = 3.55
+autoplay = true

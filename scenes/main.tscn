@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene load_steps=17 format=3 uid="uid://dxvvlck8lej3f"]
 
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_q8fpv"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_elriq"]
@@ -12,6 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://d2g78tpqbyf5g" path="res://objects/enemy.tscn" id="8_7ty2f"]
 [ext_resource type="PackedScene" uid="uid://b0nt4n13a6448" path="res://addons/starlight/Stars.tscn" id="11_pg8oc"]
 [ext_resource type="Script" path="res://addons/starlight/StarGenerator.gd" id="12_mca7t"]
+[ext_resource type="AudioStream" uid="uid://b8smno4kmqf27" path="res://sounds/Vivaldi_-_Four_Seasons_1_Spring_mvt_1_Allegro_-_John_Harrison_violin.ogg" id="13_m25qk"]
+[ext_resource type="AudioStream" uid="uid://6wj37b8e5l7v" path="res://sounds/133100__klankbeeld__horror-ambience-10.wav" id="14_d13wo"]
+
+[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_lis3e"]
+loop = true
 
 [sub_resource type="LabelSettings" id="LabelSettings_fpmwk"]
 font = ExtResource("3_w27de")
@@ -24,6 +29,20 @@ outline_color = Color(0, 0, 0, 0.470588)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_q8fpv")
 script = ExtResource("2_weogu")
+
+[node name="AlarmSound" type="AudioStreamPlayer" parent="WorldEnvironment"]
+stream = SubResource("AudioStreamMP3_lis3e")
+pitch_scale = 0.28
+autoplay = true
+
+[node name="SpookyMusic" type="AudioStreamPlayer" parent="WorldEnvironment"]
+stream = ExtResource("14_d13wo")
+volume_db = -80.0
+autoplay = true
+
+[node name="HappyMusic" type="AudioStreamPlayer" parent="WorldEnvironment"]
+stream = ExtResource("13_m25qk")
+autoplay = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 100, 0)

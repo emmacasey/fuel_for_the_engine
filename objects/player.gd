@@ -40,6 +40,7 @@ signal fuel_engine
 @onready var muzzle = $Head/Camera/SubViewportContainer/SubViewport/CameraItem/Muzzle
 @onready var container = $Head/Camera/SubViewportContainer/SubViewport/CameraItem/Container
 @onready var sound_footsteps = $SoundFootsteps
+@onready var sound_alarm = $AlarmSound
 @onready var blaster_cooldown = $Cooldown
 
 @export var crosshair:TextureRect
@@ -298,15 +299,21 @@ func drain(amount):
 	if health > 50:
 		movement_speed = 5
 		jump_strength = 8
+		sound_alarm.stream_paused = true
 	elif health >25:
 		movement_speed = 5
 		jump_strength = 4
+		sound_alarm.stream_paused = true
 	elif health >10:
 		movement_speed = 3
 		jump_strength = 0
+		sound_alarm.stream_paused = true
 	else:
 		movement_speed = 1
 		jump_strength = 0
+		sound_alarm.stream_paused = false
+
+
 
 		
 func try_drain(amount):

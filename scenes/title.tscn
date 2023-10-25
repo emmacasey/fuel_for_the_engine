@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://biff4dkpfqi47" path="res://splash-screen.png" id="2_550ak"]
 
 [sub_resource type="Theme" id="Theme_mx1vk"]
+default_font_size = 50
 
 [node name="title" type="Control"]
 layout_mode = 3
@@ -19,8 +20,8 @@ offset_left = 40.0
 offset_top = 133.0
 offset_right = 86.0
 offset_bottom = 164.0
-scale = Vector2(4, 4)
 theme = SubResource("Theme_mx1vk")
+theme_override_colors/font_color = Color(0, 1, 0.901961, 1)
 text = "Start"
 
 [node name="Splash-screen" type="Sprite2D" parent="."]
