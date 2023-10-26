@@ -105,6 +105,25 @@ func _physics_process(delta):
 	if position.y < -10:
 		die()
 
+	# Abilities
+	if health > 50:
+		movement_speed = 5
+		jump_strength = 8
+		sound_alarm.stream_paused = true
+	elif health >25:
+		movement_speed = 5
+		jump_strength = 4
+		sound_alarm.stream_paused = true
+	elif health >10:
+		movement_speed = 3
+		jump_strength = 0
+		sound_alarm.stream_paused = true
+	else:
+		movement_speed = 1
+		jump_strength = 0
+		sound_alarm.stream_paused = false
+
+
 # Mouse movement
 
 func _input(event):
@@ -296,22 +315,6 @@ func drain(amount):
 	health -= amount
 	health_updated.emit(health) # Update health on HUD
 
-	if health > 50:
-		movement_speed = 5
-		jump_strength = 8
-		sound_alarm.stream_paused = true
-	elif health >25:
-		movement_speed = 5
-		jump_strength = 4
-		sound_alarm.stream_paused = true
-	elif health >10:
-		movement_speed = 3
-		jump_strength = 0
-		sound_alarm.stream_paused = true
-	else:
-		movement_speed = 1
-		jump_strength = 0
-		sound_alarm.stream_paused = false
 
 
 

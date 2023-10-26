@@ -16,7 +16,7 @@ signal update_fuel
 func _ready():
 	for e in enemies:
 		if e!=null:
-			drain+=e.value
+			drain+=e.value*3
 	lagged_values.resize(600)
 	lagged_values.fill(drain)
 
@@ -48,8 +48,9 @@ func _process(delta):
 	else:
 		environment.ambient_light_energy = 0
 
+	sound_happy.stream_paused = fuel < 8000
 	sound_alarm.stream_paused = fuel > 2000
-	sound_spooky.volume_db = -fuel/ratio
+	sound_spooky.volume_db = -fuel/ratio + 70
 
 func fuel_engine(amount):
 	fuel+=amount*100

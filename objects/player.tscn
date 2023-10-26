@@ -6,13 +6,11 @@
 [ext_resource type="Resource" uid="uid://c56y8pqoyk15f" path="res://weapons/blaster.tres" id="3_kr4p8"]
 [ext_resource type="SpriteFrames" uid="uid://dbv3sy5qjatnl" path="res://sprites/burst_animation.tres" id="4_m6ukc"]
 [ext_resource type="AudioStream" uid="uid://cydjn1ct3hps2" path="res://sounds/walking.ogg" id="5_ics1s"]
+[ext_resource type="AudioStream" uid="uid://c3614kk4syd0" path="res://sounds/372251__mpaol2023__standard-emergency-warning-signal-sews.mp3" id="7_2hrvj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gdq8c"]
 radius = 0.3
 height = 1.0
-
-[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_mg7ui"]
-loop = true
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -76,10 +74,10 @@ stream = ExtResource("5_ics1s")
 volume_db = -5.0
 autoplay = true
 
+[node name="AlarmSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_2hrvj")
+volume_db = -5.0
+autoplay = true
+
 [node name="Cooldown" type="Timer" parent="."]
 one_shot = true
-
-[node name="AlarmSound" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamMP3_mg7ui")
-pitch_scale = 3.55
-autoplay = true
