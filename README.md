@@ -1,17 +1,10 @@
 <p align="center"><img src="icon.png"/></p>
 
-# Starter Kit FPS
+## Fuel For The Engines
 
-This package includes a basic template for a first person shooter in Godot 4.1.1.stable.official. Includes features like;
+The ship is slowly losing power, without power many important systems which the crew depend on will not function. You can feed fuel from your own suit to top up the ship, but this will reduce your own abilities unless you refuel yourself. There are many parasites on the ship, killing them will give you a bit more power.
 
-- Character controller
-- Weapons, switching weapons
-- Enemies
-- Sprites and 3D Models _(CC0 licensed)_
-
-### Screenshot
-
-<p align="center"><img src="screenshots/screenshot.png"/></p>
+Is it a psycological horror, a political satire, or just unpleasant to play?
 
 ### Controls
 
@@ -20,18 +13,23 @@ This package includes a basic template for a first person shooter in Godot 4.1.1
 | <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> | Movement |
 | <kbd>Spacebar</kbd> | Jump |
 | <kbd>Left mouse button</kbd> | Shoot |
-| <kbd>E</kbd> | Switch weapon |
+| <kbd>T</kbd> | Switch weapon |
+| <kbd>E</kbd> | Fuel the Engines |
 
-### License
 
-MIT License
+Based on Kenney's "Starter Kit FPS" including various assets under [CC0 licensed](https://creativecommons.org/publicdomain/zero/1.0/)
 
-Copyright (c) 2023 Kenney
+## todo
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-Assets included in this package (2D sprites, 3D models and sound effects) are [CC0 licensed](https://creativecommons.org/publicdomain/zero/1.0/)
+* fix broken audio
+* Better feedback of fuel and health
+* Overall game balance
+* Basic levels
+* more abilites
+* In-game naration and tutorialising
+* Side-objectives
+* Pretification
+* plot?
+* endgame?
+* spoilers??
+* 
