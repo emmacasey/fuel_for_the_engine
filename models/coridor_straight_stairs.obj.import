@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dyoknxp328lnp"
+path="res://.godot/imported/coridor_straight_stairs.obj-a29ccf1b7cc457f3ef3945da6d066b89.mesh"
+
+[deps]
+
+files=["res://.godot/imported/coridor_straight_stairs.obj-a29ccf1b7cc457f3ef3945da6d066b89.mesh"]
+
+source_file="res://models/coridor_straight_stairs.obj"
+dest_files=["res://.godot/imported/coridor_straight_stairs.obj-a29ccf1b7cc457f3ef3945da6d066b89.mesh", "res://.godot/imported/coridor_straight_stairs.obj-a29ccf1b7cc457f3ef3945da6d066b89.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

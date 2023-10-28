@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bwecvq8lqu84l"
+path="res://.godot/imported/coridor_box.obj-c97036defed7a948f18ce46eba00af3c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/coridor_box.obj-c97036defed7a948f18ce46eba00af3c.mesh"]
+
+source_file="res://models/coridor_box.obj"
+dest_files=["res://.godot/imported/coridor_box.obj-c97036defed7a948f18ce46eba00af3c.mesh", "res://.godot/imported/coridor_box.obj-c97036defed7a948f18ce46eba00af3c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

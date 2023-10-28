@@ -32,7 +32,7 @@ func _process(delta):
 			current_value+=(e.value)
 	lagged_values.append(current_value)
 	fuel+=lagged_values.pop_front()*delta
-	update_fuel.emit(int(fuel/100))
+	update_fuel.emit(int(fuel/ratio))
 
 	if fuel > 9500:
 		environment.background_energy_multiplier = 1
@@ -53,5 +53,5 @@ func _process(delta):
 	sound_spooky.volume_db = -fuel/ratio
 
 func fuel_engine(amount):
-	fuel+=amount*100
+	fuel+=amount*ratio
 
