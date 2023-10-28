@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene load_steps=18 format=3 uid="uid://dxvvlck8lej3f"]
 
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_q8fpv"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_elriq"]
@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://biqtga8moh7ah" path="res://fonts/lilita_one_regular.ttf" id="3_w27de"]
 [ext_resource type="PackedScene" uid="uid://dpm3l05d7fu35" path="res://objects/platform.tscn" id="5_3s40e"]
 [ext_resource type="PackedScene" uid="uid://r7rt7pth4u7o" path="res://objects/wall_low.tscn" id="5_6vel1"]
+[ext_resource type="AudioStream" uid="uid://cdgk58ewybf6l" path="res://sounds/487442__tim_verberne__spaceship-cockpit-ambience-02.wav" id="5_l0bk0"]
 [ext_resource type="PackedScene" uid="uid://c71evdjblk5wp" path="res://objects/wall_high.tscn" id="7_cabne"]
 [ext_resource type="PackedScene" uid="uid://bvx5cvigosg0s" path="res://objects/platform_large_grass.tscn" id="7_wggef"]
 [ext_resource type="PackedScene" uid="uid://d2g78tpqbyf5g" path="res://objects/enemy.tscn" id="8_7ty2f"]
@@ -36,6 +37,11 @@ autoplay = true
 [node name="SpookyMusic" type="AudioStreamPlayer" parent="WorldEnvironment"]
 stream = ExtResource("14_d13wo")
 volume_db = -80.0
+autoplay = true
+
+[node name="AmbientMusic" type="AudioStreamPlayer" parent="WorldEnvironment"]
+stream = ExtResource("5_l0bk0")
+volume_db = -30.0
 autoplay = true
 
 [node name="HappyMusic" type="AudioStreamPlayer" parent="WorldEnvironment"]

@@ -43,14 +43,14 @@ func _process(delta):
 
 	if fuel > 8500:
 		environment.ambient_light_energy = 1
-	elif fuel>8000:
+	elif fuel > 8000:
 		environment.ambient_light_energy = 0.5
 	else:
 		environment.ambient_light_energy = 0
 
 	sound_happy.stream_paused = fuel < 8000
 	sound_alarm.stream_paused = fuel > 2000
-	sound_spooky.volume_db = -fuel/ratio + 70
+	sound_spooky.volume_db = -fuel/ratio
 
 func fuel_engine(amount):
 	fuel+=amount*100
